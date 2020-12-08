@@ -90,6 +90,7 @@ func TestStopMethodModule3(t *testing.T) {
 	case <-alog.shutdownCompleteCh:
 		t.Error("Stop() method doesn't wait for signal from shutdownCompleteCh channel")
 	default:
+
 	}
 }
 
