@@ -45,7 +45,7 @@ func (al Alog) Start() {
 		select {
 		case msg := <-al.msgCh:
 			go al.write(msg, nil)
-		case shut := <-al.shutdownCh:
+		case <-al.shutdownCh:
 			go al.shutdown()
 
 		}
