@@ -47,12 +47,13 @@ func (al Alog) Start() {
 		case msg := <-al.msgCh:
 			wg.Add(1)
 			go al.write(msg, wg)
-			wg.Wait()
-		case <-al.shutdownCh:
-			al.shutdown()
-			break
-		}
 
+		case <-al.shutdownCh:
+			wg.Wait()
+			al.shutdown()
+
+		}
+		break
 	}
 
 }
