@@ -12,6 +12,7 @@ import (
 )
 
 func main() {
+
 	out := flag.String("out", "stdout", "File name to use for log output. If stdout is provided, then output is written directly to the console.")
 	async := flag.Bool("async", false, "This flag determines if the logger should write asynchronously.")
 	flag.Parse()
